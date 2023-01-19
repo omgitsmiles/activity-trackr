@@ -1,12 +1,13 @@
 import './App.css';
-import Testing from './components/Testing';
+import Form from './components/Form';
 
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      hi
-      <Testing/>
+      TypeScript Form
+      <div></div>
+      <Form/>
     </div>
   );
 }
