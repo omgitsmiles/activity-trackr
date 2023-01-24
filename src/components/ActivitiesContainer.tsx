@@ -9,13 +9,20 @@ import { Button } from '@mui/material';
 const ActivitiesContainer: React.FC = () => {
     interface Form {
         track: string,
-        tempo: string
+        tempo: string,
+        long: string
     }
 
     const [expanded, setExpanded] = useState<string | false>(false)
+    const [times, setTimes] = useState<Form>({
+        track: "",
+        tempo: "",
+        long: ""
+    })
     const [formData, setFormData] = useState<Form>({
         track: "",
-        tempo: ""
+        tempo: "",
+        long: ""
     })
 
     const handleChange =
@@ -29,6 +36,11 @@ const ActivitiesContainer: React.FC = () => {
             ...formData,
             [input.id]: input.value
         })
+    }
+
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault()
+        setTimes(formData)
     }
 
   return (
@@ -47,17 +59,32 @@ const ActivitiesContainer: React.FC = () => {
         <AccordionDetails>
           <Typography>
             Track: 20x200
+            <div>
+                {times.track}
+            </div>
           </Typography>
           <Typography>
             Tempo: 3x10' 2' standing rest
+            <div>
+                {times.tempo}
+            </div>
           </Typography>
-          <form onChange={handleForm}>
+          <Typography>
+            Long Run: 100 miles
+            <div>
+                {times.long}
+            </div>
+          </Typography>
+          <form onChange={handleForm} onSubmit={handleSubmit}>
             <label htmlFor='track'>track times </label>
             <input id='track'></input>
-            <Button>submit</Button>
+            <Button type='submit'>submit</Button>
             <label htmlFor='tempo'>tempo times </label>
             <input id='tempo'></input>
-            <Button>submit</Button>
+            <Button type='submit'>submit</Button>
+            <label htmlFor='long'>long run times </label>
+            <input id='long'></input>
+            <Button type='submit'>submit</Button>
           </form>
         </AccordionDetails>
       </Accordion>
