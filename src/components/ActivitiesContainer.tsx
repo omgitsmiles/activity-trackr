@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useState } from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -12,7 +12,6 @@ const ActivitiesContainer: React.FC = () => {
         tempo: string,
         long: string
     }
-
     const [expanded, setExpanded] = useState<string | false>(false)
     const [times, setTimes] = useState<Form>({
         track: "",
@@ -57,23 +56,23 @@ const ActivitiesContainer: React.FC = () => {
           <Typography sx={{ color: 'text.secondary' }}>Getting back in a swing of things</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            Track: 20x200
-            <div>
+          <Typography component={'span'}>
+            <strong>Track</strong>: 20x200
+            <p>
                 {times.track}
-            </div>
+            </p>
           </Typography>
-          <Typography>
-            Tempo: 3x10' 2' standing rest
-            <div>
-                {times.tempo}
-            </div>
+          <Typography component={'span'}>
+            <strong>Tempo</strong>: 3x10' 2' standing rest
+            <p>
+                {times.tempo }
+            </p>
           </Typography>
-          <Typography>
-            Long Run: 100 miles
-            <div>
+          <Typography component={'span'}>
+            <strong>Long Run</strong>: 100 miles
+            <p>
                 {times.long}
-            </div>
+            </p>
           </Typography>
           <form onChange={handleForm} onSubmit={handleSubmit}>
             <label htmlFor='track'>track times </label>

@@ -1,14 +1,20 @@
 import './App.css';
-import Form from './components/Form';
 import ActivitiesContainer from './components/ActivitiesContainer';
+import SuggestedPaces from './components/SuggestedPaces';
 
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      Piku 🏃🏼‍♀️ Boston
-      <div></div>
+      <h1>
+        Piku 🏃🏽‍♀️ Boston
+      </h1>
+      <br></br>
+      <br></br>
       <ActivitiesContainer/>
+      <br></br>
+      <br></br>
+      <SuggestedPaces/>
     </div>
   );
 }
