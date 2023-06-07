@@ -8,3 +8,5 @@ An application I wrote when I was coaching a friend during her marathon. It was 
 - Unique privileges for depenedent on if user is coach or athlete 
 - back end would store the posted workouts by the coach as well as the results from the athlete and log in info
 
+![app](https://github.com/omgitsmiles/activity-trackr/blob/main/ezgif.com-video-to-gif.gif)
+
